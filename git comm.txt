@@ -8,3 +8,12 @@ git add .
 git remote add origin "url"
 git commit -m "label1"
 git push -u origin master
+ 
+aarathano clone cheyth edukanulla code
+
+git clone "url"
+git branch branchname
+git status
+
+
+git pull "url"
