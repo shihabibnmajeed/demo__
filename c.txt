@@ -1,0 +1,276 @@
+1.     #include <stdio.h>  
+2.	int main()  
+3.	{  
+4.	    int a, b, c;   
+5.	     printf("Enter three numbers?");  
+6.	    scanf("%d %d %d",&a,&b,&c);  
+7.	    if(a>b && a>c)  
+8.	    {  
+9.	        printf("%d is largest",a);  
+10.	    }  
+11.	    if(b>a  && b > c)  
+12.	    {  
+13.	        printf("%d is largest",b);  
+14.	    }  
+15.	    if(c>a && c>b)  
+16.	    {  
+17.	        printf("%d is largest",c);  
+18.	    }  
+19.	    if(a == b && a == c)   
+20.	    {  
+21.	        printf("All are equal");   
+22.	    }  
+23.	}  
+
+
+
+
+//Program to calculate the grade of the student according to the specified marks.
+
+
+
+1.	#include <stdio.h>  
+2.	int main()  
+3.	{  
+4.	    int marks;   
+5.	    printf("Enter your marks?");  
+6.	    scanf("%d",&marks);   
+7.	    if(marks > 85 && marks <= 100)  
+8.	    {  
+9.	        printf("Congrats ! you scored grade A ...");   
+10.	    }  
+11.	    else if (marks > 60 && marks <= 85)   
+12.	    {  
+13.	        printf("You scored grade B + ...");  
+14.	    }  
+15.	    else if (marks > 40 && marks <= 60)   
+16.	    {  
+17.	        printf("You scored grade B ...");  
+18.	    }  
+19.	    else if (marks > 30 && marks <= 40)   
+20.	    {  
+21.	        printf("You scored grade C ...");   
+22.	    }  
+23.	    else   
+24.	    {  
+25.	        printf("Sorry you are fail ...");   
+26.	    }  
+27.	}  
+
+
+
+
+
+
+//Program to print table for the given number using while loop in C
+
+1.	#include<stdio.h>  
+2.	int main(){    
+3.	int i=1,number=0,b=9;    
+4.	printf("Enter a number: ");    
+5.	scanf("%d",&number);    
+6.	while(i<=10){    
+7.	printf("%d \n",(number*i));    
+8.	i++;    
+9.	}    
+10.	return 0;  
+11.	}   
+
+
+
+
+//Let's see the simple program of for loop that prints table of 1.
+
+1.	#include<stdio.h>  
+2.	int main(){  
+3.	int i=0;        
+4.	for(i=1;i<=10;i++){      
+5.	printf("%d \n",i);      
+6.	}     
+7.	return 0;  
+8.	}     
+
+
+
+
+//C Program: Print table for the given number using C for loop
+
+1.	#include<stdio.h>  
+2.	int main(){  
+3.	int i=1,number=0;      
+4.	printf("Enter a number: ");    
+5.	scanf("%d",&number);    
+6.	for(i=1;i<=10;i++){      
+7.	printf("%d \n",(number*i));    
+8.	}    
+
+
+
+
+// program to calculate the area of the square
+
+1.	#include<stdio.h>  
+2.	int sum();  
+3.	void main()  
+4.	{  
+5.	    printf("Going to calculate the area of the square\n");  
+6.	    float area = square();  
+7.	    printf("The area of the square: %f\n",area);  
+8.	}  
+9.	int square()  
+10.	{  
+11.	    float side;  
+12.	    printf("Enter the length of the side in meters: ");  
+13.	    scanf("%f",&side);  
+14.	    return side * side;  
+15.	}  
+
+
+
+//Example for Function with argument and without return value
+
+1.	#include<stdio.h>  
+2.	void sum(int, int);  
+3.	void main()  
+4.	{  
+5.	    int a,b,result;   
+6.	    printf("\nGoing to calculate the sum of two numbers:");  
+7.	    printf("\nEnter two numbers:");  
+8.	    scanf("%d %d",&a,&b);  
+9.	    sum(a,b);  
+10.	}  
+11.	void sum(int a, int b)  
+12.	{  
+13.	    printf("\nThe sum is %d",a+b);      
+14.	}
+
+
+//Let's try to understand the concept of call by value in c language by the example given below:
+
+1.	#include<stdio.h>  
+2.	void change(int num) {    
+3.	    printf("Before adding value inside function num=%d \n",num);    
+4.	    num=num+100;    
+5.	    printf("After adding value inside function num=%d \n", num);    
+6.	}    
+7.	int main() {    
+8.	    int x=100;    
+9.	    printf("Before function call x=%d \n", x);    
+10.	    change(x);//passing value in function    
+11.	    printf("After function call x=%d \n", x);    
+12.	return 0;  
+13.	}    
+
+//Call by Value Example: Swapping the values of the two variables
+
+
+1.	#include <stdio.h>  
+2.	void swap(int , int); //prototype of the function   
+3.	int main()  
+4.	{  
+5.	    int a = 10;  
+6.	    int b = 20;   
+7.	    printf("Before swapping the values in main a = %d, b = %d\n",a,b); // printing the value of a and b in main  
+8.	    swap(a,b);  
+9.	    printf("After swapping values in main a = %d, b = %d\n",a,b); // The value of actual parameters do not change by changing the formal parameters in call by value, a = 10, b = 20  
+10.	}  
+11.	void swap (int a, int b)  
+12.	{  
+13.	    int temp;   
+14.	    temp = a;  
+15.	    a=b;  
+16.	    b=temp;  
+17.	    printf("After swapping values in function a = %d, b = %d\n",a,b); // Formal parameters, a = 20, b = 10   
+18.	}  
+
+//Call by reference Example: Swapping the values of the two variables
+
+1.	#include <stdio.h>  
+2.	void swap(int *, int *); //prototype of the function   
+3.	int main()  
+
+4.	{  
+5.	    int a = 10;  
+6.	    int b = 20;   
+7.	    printf("Before swapping the values in main a = %d, b = %d\n",a,b); // printing the value of a and b in main  
+8.	    swap(&a,&b);  
+9.	    printf("After swapping values in main a = %d, b = %d\n",a,b); // The values of actual parameters do change in call by reference, a = 10, b = 20  
+10.	}  
+11.	void swap (int *a, int *b)  
+12.	{  
+13.	    int temp;   
+14.	    temp = *a;  
+15.	    *a=*b;  
+16.	    *b=temp;  
+17.	    printf("After swapping values in function a = %d, b = %d\n",*a,*b); // Formal parameters, a = 20, b = 10   
+18.	}  
+
+
+//C array example
+
+1.	#include<stdio.h>  
+2.	int main(){      
+3.	int i=0;    
+4.	int marks[5];//declaration of array       
+5.	marks[0]=80;//initialization of array    
+6.	marks[1]=60;    
+7.	marks[2]=70;    
+8.	marks[3]=85;    
+9.	marks[4]=75;    
+10.	//traversal of array    
+11.	for(i=0;i<5;i++){      
+12.	printf("%d \n",marks[i]);    
+13.	}//end of for loop     
+14.	return 0;  
+15.	}  
+
+
+//In such case, there is no requirement to define the size. So it may also be written as the following code.
+
+#include<stdio.h>    
+1.	void main ()    
+2.	{    
+3.	    int i, j,temp;     
+4.	    int a[10] = { 10, 9, 7, 101, 23, 44, 12, 78, 34, 23};     
+5.	    for(i = 0; i<10; i++)    
+6.	    {    
+7.	        for(j = i+1; j<10; j++)    
+8.	        {    
+9.	            if(a[j] > a[i])    
+10.	            {    
+11.	                temp = a[i];    
+12.	                a[i] = a[j];    
+13.	                a[j] = temp;     
+14.	            }     
+15.	        }     
+16.	    }     
+17.	    printf("Printing Sorted Element List ...\n");    
+18.	    for(i = 0; i<10; i++)    
+19.	    {    
+20.	        printf("%d\n",a[i]);    
+21.	    }    
+22.	}     
+
+
+//The strlen() function returns the length of the given string. It doesn't count null character '\0'.
+
+1.	#include<stdio.h>  
+2.	#include <string.h>    
+3.	int main(){    
+4.	char ch[20]={'j', 'a', 'v', 'a', 't', 'p', 'o', 'i', 'n', 't', '\0'};    
+5.	   printf("Length of string is: %zu",strlen(ch));    
+6.	 return 0;    
+7.	}    
+
+//The strcpy(destination, source) function copies the source string in destination.
+
+1.	#include<stdio.h>  
+2.	#include <string.h>    
+3.	int main(){    
+4.	 char ch[20]={'j', 'a', 'v', 'a', 't', 'p', 'o', 'i', 'n', 't', '\0'};    
+5.	   char ch2[20];    
+6.	   strcpy(ch2,ch);    
+7.	   printf("Value of second string is: %s",ch2);    
+8.	 return 0;    
+9.	}    
+
